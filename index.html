@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  @-webkit-keyframes rotate {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+  }
+
+  #spinner-container {
+    position: relative;
+  }
+
+  #pointer {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #000;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  #spinner {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 5px;
+    -webkit-animation: rotate ease-out;
+    -webkit-animation-duration: 10s;
+    animation-fill-mode: forwards;
+  }
+
+  #spin {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+
+    display: block;
+    margin: 0 auto;
+  }
+
+  .chart rect {
+    fill: steelblue;
+  }
+
+  .chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+  }
+</style>
+
+
+<head>
+  <script src="./node_modules/d3/d3.min.js"></script>
+</head>
+
+<body>
+  <h1 style='text-align: center;'>
+    WHAT'S FOR LUNCH TODAY?
+  </h1>
+
+  <Button id='spin' style='font-size:20px;font-weight:600;'>
+    SPIN IT! JUST DO IT!
+  </Button>
+
+  <div id='spinner-container'>
+    <div id="pointer"></div>
+    <div id="spinner"></div>
+  </div>
+
+  <svg class='chart'></svg>
+</body>
+
+<script src="./js/index.js"></script>
