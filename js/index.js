@@ -84,7 +84,7 @@ element.style.webkitTransform = "rotate("+finalDeg+"deg)";
 button.onclick = function(evt) {
   evt.preventDefault();
   evt.stopPropagation();
-  location.href = '/';
+  location.href = '/whatsforlunchtoday';
 };
 
 
